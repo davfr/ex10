@@ -1,10 +1,10 @@
-#!bin/bash
+#!/bin/bash
 
 
 sed -n '/Sherlock\|Holmes/p' books/sherlockholmes.txt | wc -l
 
 
-sed 's/Sherlock/Sherlock\n/g; s/Holmes/Holmes\n/g' books/sherlockholmes.txt | wc -l
+sed -E 's/(Sherlock|Holmes)/\n\1/g' books/sherlockholmes.txt | grep -E "Sherlock|Holmes" | wc -l
 
 
 sed -E 's/^.{70,}$/long line/' books/sherlockholmes.txt
