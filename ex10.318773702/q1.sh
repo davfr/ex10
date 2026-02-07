@@ -1,3 +1,4 @@
+#!/bin/bash
 #a
 awk 'END { print NR }' aliceinwonderland.txt
 
